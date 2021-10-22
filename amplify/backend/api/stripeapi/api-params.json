@@ -1,0 +1,36 @@
+{
+    "paths": [
+        {
+            "name": "/stripe",
+            "lambdaFunction": "stripefunc",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/stripe"
+        }
+    ],
+    "resourceName": "stripeapi",
+    "apiName": "stripeapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "stripefunc"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-amplifystripestarter-dev-11712-authRole",
+        "unAuthRoleName": "amplify-amplifystripestarter-dev-11712-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "stripefunc",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "471ce503"
+}

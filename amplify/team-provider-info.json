@@ -1,0 +1,27 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifystripestarter-dev-11712-authRole",
+      "UnauthRoleArn": "arn:aws:iam::936471194299:role/amplify-amplifystripestarter-dev-11712-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::936471194299:role/amplify-amplifystripestarter-dev-11712-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-amplifystripestarter-dev-11712-deployment",
+      "UnauthRoleName": "amplify-amplifystripestarter-dev-11712-unauthRole",
+      "StackName": "amplify-amplifystripestarter-dev-11712",
+      "StackId": "arn:aws:cloudformation:us-east-1:936471194299:stack/amplify-amplifystripestarter-dev-11712/896d30a0-3236-11ec-b92d-0e4576644b0f",
+      "AmplifyAppId": "d2dgqtwjuz0gha"
+    },
+    "categories": {
+      "auth": {
+        "amplifystripestarter9420c337": {}
+      },
+      "function": {
+        "stripefunc": {
+          "secretsPathAmplifyAppId": "d2dgqtwjuz0gha",
+          "deploymentBucketName": "amplify-amplifystripestarter-dev-11712-deployment",
+          "s3Key": "amplify-builds/stripefunc-30316370644a32613035-build.zip"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "auth": {
+      "amplifystripestarter9420c337": [
+        "create"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "secretNames": [
+    "STRIPE_SECRET_KEY",
+    "STRIPE_WEBHOOK_SECRET"
+  ]
+}
