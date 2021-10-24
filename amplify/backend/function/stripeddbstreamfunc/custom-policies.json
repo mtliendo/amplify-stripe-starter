@@ -1,0 +1,9 @@
+[
+	{
+		"Action": ["geo:SearchPlaceIndexForText", "geo:PutGeofence"],
+		"Resource": [
+			"arn:aws:geo:us-east-1:936471194299:geofence-collection/stripe-geofences",
+			"arn:aws:geo:us-east-1:936471194299:place-index/stripe-places"
+		]
+	}
+]

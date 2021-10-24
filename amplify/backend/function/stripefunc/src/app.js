@@ -53,7 +53,11 @@ app.get('/stripe/products', jsonParser, async function (req, res) {
 	// Add your code here
 	const stripeSecretKey = await fetchStripeSecret('STRIPE_SECRET_KEY')
 	const stripe = new Stripe(stripeSecretKey)
-
+	console.log('credssss', {
+		accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+		secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+		sessionToken: process.env.AWS_SESSION_TOKEN,
+	})
 	const productPriceData = await stripe.prices.list({
 		expand: ['data.product'], // 🎉 Give me the product data too!
 	})
@@ -153,7 +157,52 @@ app.post(
 				console.log('webhook triggered', JSON.stringify(paymentIntent, null, 2))
 
 				//fetch user, if they don't exist, create them.
-				//use user details to create an Order
+				const cognito = new aws.CognitoIdentityServiceProvider({
+					apiVersion: '2016-04-18',
+				})
+
+				cognito.adminCreateUser(
+					{
+						UserPoolId:
+							process.env.AUTH_AMPLIFYSTRIPESTARTER9420C337_USERPOOLID,
+						Username: 'mtliendo@gmail.com',
+						DesiredDeliveryMediums: ['EMAIL'],
+
+						UserAttributes: [
+							{
+								Name: 'email',
+								Value: 'mtliendo@gmail.com',
+							},
+						],
+					},
+					async function (err, data) {
+						if (err && err.code === 'UsernameExistsException') {
+							const params = {
+								UserPoolId:
+									process.env.AUTH_AMPLIFYSTRIPESTARTER9420C337_USERPOOLID,
+								Username: 'mtliendo@gmail.com',
+							}
+
+							console.log(
+								`Attempting to retrieve information for mtliendo@gmail.com`
+							)
+
+							try {
+								const result = await cognitoIdentityServiceProvider
+									.adminGetUser(params)
+									.promise()
+								return result
+							} catch (err) {
+								console.log(err)
+								throw err
+							}
+						} else {
+							console.log(data)
+							res.sendStatus(200)
+						} // successful response
+					}
+				)
+				//use user details to create an Order (🚨 HERE I AM)
 				break
 			// ... handle other event types
 			default:

@@ -1,0 +1,6 @@
+[
+	{
+		"Action": ["sns:publish"],
+		"Resource": ["arn:aws:sns:us-east-1:936471194299:StripeTopic"]
+	}
+]

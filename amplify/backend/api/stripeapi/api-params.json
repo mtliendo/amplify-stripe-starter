@@ -7,6 +7,20 @@
                 "open": true
             },
             "policyResourceName": "/stripe"
+        },
+        {
+            "name": "/subscribe-to-notifications",
+            "lambdaFunction": "stripesnssubscribe",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST"
+                ],
+                "unauth": [
+                    "/POST"
+                ]
+            },
+            "policyResourceName": "/subscribe-to-notifications"
         }
     ],
     "resourceName": "stripeapi",
@@ -14,11 +28,14 @@
     "functionArns": [
         {
             "lambdaFunction": "stripefunc"
+        },
+        {
+            "lambdaFunction": "stripesnssubscribe"
         }
     ],
     "privacy": {
-        "auth": 0,
-        "unauth": 0,
+        "auth": 1,
+        "unauth": 1,
         "authRoleName": "amplify-amplifystripestarter-dev-11712-authRole",
         "unAuthRoleName": "amplify-amplifystripestarter-dev-11712-unauthRole"
     },
@@ -30,7 +47,15 @@
                 "Name",
                 "Arn"
             ]
+        },
+        {
+            "category": "function",
+            "resourceName": "stripesnssubscribe",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
         }
     ],
-    "uuid": "471ce503"
+    "uuid": "a68f0bb4"
 }

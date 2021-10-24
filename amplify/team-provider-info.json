@@ -19,7 +19,27 @@
         "stripefunc": {
           "secretsPathAmplifyAppId": "d2dgqtwjuz0gha",
           "deploymentBucketName": "amplify-amplifystripestarter-dev-11712-deployment",
-          "s3Key": "amplify-builds/stripefunc-30316370644a32613035-build.zip"
+          "s3Key": "amplify-builds/stripefunc-73472b5a427873494b4f-build.zip"
+        },
+        "amplifystripestarter9420c337PostConfirmation": {
+          "deploymentBucketName": "amplify-amplifystripestarter-dev-11712-deployment",
+          "s3Key": "amplify-builds/amplifystripestarter9420c337PostConfirmation-68395355636b49734935-build.zip"
+        },
+        "stripecallappsync": {
+          "deploymentBucketName": "amplify-amplifystripestarter-dev-11712-deployment",
+          "s3Key": "amplify-builds/stripecallappsync-626342683569726b4431-build.zip"
+        },
+        "stripeddbstreamfunc": {
+          "deploymentBucketName": "amplify-amplifystripestarter-dev-11712-deployment",
+          "s3Key": "amplify-builds/stripeddbstreamfunc-4d4f5353504f6444792f-build.zip"
+        },
+        "stripesnssubscribe": {
+          "deploymentBucketName": "amplify-amplifystripestarter-dev-11712-deployment",
+          "s3Key": "amplify-builds/stripesnssubscribe-39364359736672523648-build.zip"
+        },
+        "stripesnspublish": {
+          "deploymentBucketName": "amplify-amplifystripestarter-dev-11712-deployment",
+          "s3Key": "amplify-builds/stripesnspublish-347834437759524f5978-build.zip"
         }
       }
     }

@@ -36,8 +36,15 @@ const Home = () => {
 		await stripe.redirectToCheckout({ sessionId: data.id })
 	}
 
+	const handleSubscribeClick = async () => {
+		const data = await API.post('stripeapi', '/subscribe-to-notifications', {
+			body: { orderID: 'testing', phoneNumber: '+15633496229' },
+		})
+	}
+
 	return (
 		<main>
+			<button onClick={handleSubscribeClick}>Test Subscribe</button>
 			{products.map((product) => {
 				return (
 					<article
